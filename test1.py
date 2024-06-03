@@ -6,3 +6,6 @@ suma = 0
 suma = a + b 
 print(suma)
 k = 4
+j = 7
+resta = j - k
+print(resta)
