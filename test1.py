@@ -1,11 +1,8 @@
+import sqlite3 as SQL
 
-print("Hola mundo")
-a = 3
-b = 1
-suma = 0
-suma = a + b 
-print(suma)
-k = 4
-j = 7
-resta = j - k
-print(resta)
+conexion=SQL.connect("db_personas.db")
+hola = conexion.cursor()
+hola.execute("SELECT rut, FROM personas")
+como = hola.fetchall()
+for k in hola:
+    print(k)
