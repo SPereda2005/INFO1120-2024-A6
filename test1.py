@@ -1,4 +1,6 @@
 import sqlite3 as SQL
+import pandas as pd
+
 
 conexion=SQL.connect("db_personas.db")
 hola = conexion.cursor()
