@@ -1,21 +1,18 @@
-import sqlite3
+import sqlite3 as SQL
 import matplotlib.pyplot as plt
 
 
 # Conectamos la base de datos SQLite3
-conexion = sqlite3.connect('Sql_data/db_personas.db')
-cursor = conexion.cursor()
+conexion = SQL.connect('Sql_data/db_personas.db')
+consulta = conexion.cursor()
 
 # Ejecutamos una consulta para obtener los datos que necesitamos
-cursor.execute("SELECT profesion, COUNT(*) FROM personas GROUP BY profesion")
-
-# Obtenemos los resultados de la consulta
-datos = cursor.fetchall()
+consulta.execute("SELECT profesion, COUNT(*) FROM personas GROUP BY profesion")
 
 # Guardamos las profesiones en una variable agrupadas con GROUP BY
-profesiones = [dato[0] for dato in datos]
+profesiones = [dato[0] for dato in consulta]
 # Guardamos el conteo de las profesiones en una variabkle
-conteos = [dato[1] for dato in datos]
+conteos = [dato[1] for dato in consulta]
 
 # Crear el gráfico de tartas
 plt.pie(conteos, labels=profesiones, autopct='%1.1f%%', startangle=90)
