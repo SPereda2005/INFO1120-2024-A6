@@ -17,6 +17,8 @@ def singular_data_to_contract(df: pd.DataFrame, index_row:int):
     salary = sub_df['Sueldo']
     example_contract(date, rol, address, rut, full_name, nationality, birth_date, profession, str(salary))
 
+
+
     
 
 
