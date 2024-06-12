@@ -1,4 +1,3 @@
-import os
 from docx import Document
 from docx.shared import  Pt,Cm,Mm
 def example_contract(date:str, rol:str, address:str, rut:str, full_name:str, nationality:str, birth_date:str, profession:str, salary:str)->str:
@@ -71,8 +70,6 @@ def example_contract(date:str, rol:str, address:str, rut:str, full_name:str, nat
     run = paragraph.add_run('Caupolican 0455, Temuco, Chile, www.corpoindet.cl')
     run.add_picture("imagenes/footer1.png")
     document.save(f'{full_name}.docx')
-
-
 
 
 
